@@ -1,0 +1,341 @@
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90vh;
+
+}
+
+.flexbox > .flexbox {
+  padding: 50px;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.flexcenter{
+  align-self: center;
+}
+
+.flexbase{
+  align-self: baseline;
+}
+
+
+.columnThin{
+  flex: none;
+}
+.columnMedium{
+  flex: 2;
+}
+.columnThick{
+  flex: 4;
+}
+.bottomAligned{
+  flex-direction: column-reverse;
+  align-self: baseline;
+}
+.topAligned {
+  flex-direction: column;
+}
+
+
+/* To be changed for actual scrollable list*/
+.list-placeholder {
+  height: 800px;
+  background-color: grey;
+}
+
+.center{
+  text-align: center;
+}
+
+.right-button {
+  display: inline-block;
+  text-align: center;
+
+  height: 400px;
+  border-radius: 10px;
+
+}
+
+.large-button{
+  height: 400px;
+  border-radius: 10px;
+}
+
+.medium-button{
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.right-add-button{
+  background-color: Turquoise;
+}
+.call-button{
+  background-color: limegreen;
+}
+.right-remove-button{
+  background-color: red;
+}
+.right-button > .flexbox{
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+}
+
+.white-text {
+  color: white;
+}
+
+.extra-large-text {
+  font-size: 50px;
+}
+
+
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+
+}
+
+h1 {
+  color:#3a3a3a
+}
+
+.headerstyle {
+  font-size: 38px;
+}
+
+.form-headline {
+  font-size: 32px;
+  font-weight:bold;
+  color:#3a3a3a;
+  margin-bottom:0;
+}
+
+.button {
+  background-color: #3bbbd1; /* Blue */
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:focus {
+outline: none;
+}
+
+.button-next {
+  padding: 13px 90px;
+  font-size: 30px;
+}
+
+.button-next:hover {
+  background-color:#2495A8;
+  transition: all 0.3s ease 0s;
+}
+
+
+.button1 {
+  padding: 21px 90px;
+  font-size: 25px;
+}
+
+.button2 {
+  background-color: #c45b5b; /* Red */
+  padding: 15px 70px;
+  font-size: 16px;
+}
+
+.paddingheader {
+  padding:80px 0;
+}
+
+.center {
+  text-align: center;
+}
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.centerDivVertical{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* scroll-box */
+
+.scroll-container {
+  border: none;
+  direction:ltr;
+
+
+}
+
+.scroll-header {
+  direction:rtl;
+  background-color: #ffffff;
+}
+
+.scroll-outer {
+  border: 3px solid #3bbbd1;
+  overflow: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}
+.largeScroll{
+  height: 700px;
+}
+.mediumScroll{
+  height: 500px;
+}
+
+.scroll-inner {
+  direction:ltr;
+  padding: 0px 200px 0px 200px;
+
+}
+
+.scroll-row {
+  display: flex;
+  justify-content: center;
+  grid-column-gap: 30px;
+}
+
+.name-plate {
+  background-color: #3bbbd1; /* Blue */
+  border: none;
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  font-size: 20px;
+  width:300px;
+  line-height: 40px;
+}
+
+
+.name-plate:focus {
+outline: none;
+}
+
+.name-button {
+  background-color: #3bbbd1; /* Blue */
+  border: none;
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  font-size: 20px;
+  text-decoration: none;
+  width:300px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.name-button:focus {
+outline: none;
+}
+
+.name-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.name-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.name-button:hover span {
+  padding-right: 25px;
+}
+
+.name-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #3bbbd1;
+  border-radius: 4px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #3bbbd1; /* Blue */
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 13px 90px;
+  font-size: 30px;
+}
+
+input[type=button], input[type=submit], input[type=reset]:focus {
+  outline: none;
+}
+
+
+.alter-button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 39px;
+  line-height: 39px;
+  display: inline-block;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.alter-button:focus {
+outline: none;
+}
+
+.remove-button {
+	  background-color: #c93e3e;
+}
+
+.add-button {
+	  background-color: #32CD32;
+}
+
+.remove-button:hover {
+  background-color:#973333;
+  transition: all 0.3s ease 0s;
+}
+
+.add-button:hover {
+  background-color:#228B22;
+  transition: all 0.3s ease 0s;
+}
+
+/*For placing a back-arrow without flexbox */
+.upper-left{
+  top:0px;
+  left:0px;
+  padding-top: 68px;
+  padding-left: 50px;
+}
