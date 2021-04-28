@@ -1,10 +1,11 @@
-import React from "react";
-
-function Call(){
+import React, { useState,useEffect } from "react";
+import {Link} from 'react-router-dom';
+function Call(props){
+    const relativeCode = props.location.relativeCode;
     return (
-    <div>
-        <div class="center paddingheader">
-            <h1 class ='headerstyle'>Call placeholder</h1>
+    <div>    
+        <div className="center paddingheader">
+            <h1 className ='headerstyle'>Call placeholder</h1>
         </div>
     </div>        
     );
