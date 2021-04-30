@@ -1,14 +1,59 @@
-import React, { useState,useEffect } from "react";
-import {Link} from 'react-router-dom';
-function Call(props){
+
+import { Link } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import './styleOne.css';
+import CallWrapper from "./caller";
+import EndCallButton from "./endCallButton.png";
+function Call(props) {
     const relativeCode = props.location.relativeCode;
+    const [connecting, setConnecting] = useState(true);
+    const [call] = useState(new CallWrapper('http://master.api.dd1369-meetings.com', relativeCode));
+    const [streaming, setStreaming] = useState(false);
+
+    useEffect(() => {
+        alert(relativeCode);
+        const connect = async () => {
+            await call.connectToChimeMeeting(relativeCode);
+            call.startWatching();
+        }; connect();
+    }, [call]);
+
+    useEffect(() => {
+        const stream = async () => {
+            call.setAudioInputDeviceToDefault();
+            const mediaStream = await call.getVideoMediaStream();
+            await call.broadcastVideo(mediaStream);
+        };
+        streaming && stream();
+    }, [streaming, call]);
+
+
     return (
-    <div>    
-        <div className="center paddingheader">
-            <h1 className ='headerstyle'>Call placeholder</h1>
+        <div>
+            <div id="EndCall-Button">
+                <Link to="./Start"><img src={EndCallButton} /></Link>
+                <button onClick={() => setStreaming(true)}>Stream</button>
+            </div>
+
+            {connecting && <p>Connecting...</p>}
+
+
+            <div className="tileContainer">
+                <div className="tileSubContainer" id="tiles">
+                </div>
+            </div>
+
+            <audio id="audio-out"></audio>
+
         </div>
-    </div>        
     );
+    // return (
+    // <div>    
+    //     <div className="center paddingheader">
+    //         <h1 className ='headerstyle'>Call placeholder</h1>
+    //     </div>
+    // </div>        
+    // );
 }
 
 export default Call;
