@@ -16,26 +16,31 @@ function Call(props) {
             await call.connectToChimeMeeting(relativeCode);
             call.startWatching();
         }; connect();
+        doTheCall();
     }, [call]);
 
-    useEffect(() => {
-        const stream = async () => {
-            call.setAudioInputDeviceToDefault();
-            const mediaStream = await call.getVideoMediaStream();
-            await call.broadcastVideo(mediaStream);
-        };
-        streaming && stream();
-    }, [streaming, call]);
+    function doTheCall() {
+
+          if(call.hasActiveCall()){
+            const stream = async () => {
+              call.setAudioInputDeviceToDefault();
+              const mediaStream = await call.getVideoMediaStream();
+              await call.broadcastVideo(mediaStream);
+            };
+              stream();
+            }else {
+                setTimeout(doTheCall, 100);
+            }
+          }
+
 
 
     return (
         <div>
             <div id="EndCall-Button">
                 <Link to="./Start"><img src={EndCallButton} /></Link>
-                <button onClick={() => setStreaming(true)}>Stream</button>
             </div>
 
-            {connecting && <p>Connecting...</p>}
 
 
             <div className="tileContainer">
@@ -48,11 +53,11 @@ function Call(props) {
         </div>
     );
     // return (
-    // <div>    
+    // <div>
     //     <div className="center paddingheader">
     //         <h1 className ='headerstyle'>Call placeholder</h1>
     //     </div>
-    // </div>        
+    // </div>
     // );
 }
 
