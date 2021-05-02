@@ -11,7 +11,7 @@ function Call(props) {
     const [streaming, setStreaming] = useState(false);
 
     useEffect(() => {
-        alert(relativeCode);
+  
         const connect = async () => {
             await call.connectToChimeMeeting(relativeCode);
             call.startWatching();
