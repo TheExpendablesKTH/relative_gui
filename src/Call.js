@@ -13,7 +13,6 @@ function Call(props) {
 
     useEffect(() => {
 
-=======
     const [call] = useState(new CallWrapper('https://master.api.dd1369-meetings.com', relativeCode));
     const [streaming, setStreaming] = useState(false);
 
