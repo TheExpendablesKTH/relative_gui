@@ -31,7 +31,11 @@ function Start() {
                     <input type = "submit" value = "Öppna samtal"></input>
                 </form>
             </div>
+<<<<<<< HEAD
             {approvedCode && <Redirect to={{pathname:"/Call",relativeCode:relativeCode}}>}
+=======
+            {approvedCode && <Redirect to={{pathname:"/Call",relativeCode:relativeCode}} />}
+>>>>>>> 5a9fac97d20dcff8767e75c82753128f4a939f31
 
 
     </div>
