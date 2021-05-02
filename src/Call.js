@@ -7,12 +7,6 @@ import EndCallButton from "./endCallButton.png";
 function Call(props) {
     const relativeCode = props.location.relativeCode;
     const [connecting, setConnecting] = useState(true);
-
-    const [call] = useState(new CallWrapper('http://master.api.dd1369-meetings.com', relativeCode));
-    const [streaming, setStreaming] = useState(false);
-
-    useEffect(() => {
-
     const [call] = useState(new CallWrapper('https://master.api.dd1369-meetings.com', relativeCode));
     const [streaming, setStreaming] = useState(false);
 
@@ -65,6 +59,7 @@ function Call(props) {
     //     </div>
     // </div>
     // );
+}
 }
 
 export default Call;
